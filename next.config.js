@@ -6,6 +6,7 @@ const nextConfig = {
   },
   basePath: process.env.NODE_ENV === 'production' ? '/DDS' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/DDS/' : '',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 

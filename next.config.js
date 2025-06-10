@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: '/dds',
-  assetPrefix: '/dds/',
+  basePath: '/dds-website',
+  assetPrefix: '/dds-website/',
 };
 
 module.exports = nextConfig; 

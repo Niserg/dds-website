@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/dds-website',
-  assetPrefix: '/dds-website/',
+  basePath: process.env.NODE_ENV === 'production' ? '/dds-website' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/dds-website/' : '',
   images: {
     unoptimized: true,
   },

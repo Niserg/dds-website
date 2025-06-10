@@ -14,22 +14,27 @@ export default function AdminLogin() {
   useEffect(() => {
     // Debug: Check if environment variables are loaded
     console.log('Environment variables:', {
-      username: process.env.NEXT_PUBLIC_ADMIN_USERNAME || config.admin.username,
-      password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD || config.admin.password
+      username: process.env.NEXT_PUBLIC_ADMIN_USERNAME,
+      password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD
     });
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Get credentials from environment variables or config
-    const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME || config.admin.username;
-    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || config.admin.password;
+    // Get credentials from environment variables
+    const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
     // Debug: Log the comparison
     console.log('Login attempt:', {
       provided: credentials,
       expected: { username: adminUsername, password: adminPassword }
     });
+
+    if (!adminUsername || !adminPassword) {
+      alert('Admin credentials not configured. Please check your environment variables.');
+      return;
+    }
 
     if (credentials.username === adminUsername && credentials.password === adminPassword) {
       localStorage.setItem('isAdmin', 'true');

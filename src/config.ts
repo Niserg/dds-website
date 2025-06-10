@@ -1,11 +1,11 @@
-// Production configuration
+// Configuration using environment variables
 const config = {
   admin: {
-    username: 'ritam@login', // Change this to your desired username
-    password: 'aanj@password', // Change this to your desired password
+    username: process.env.NEXT_PUBLIC_ADMIN_USERNAME,
+    password: process.env.NEXT_PUBLIC_ADMIN_PASSWORD,
   },
   tinymce: {
-    apiKey: 'h0nuimu53181dlzwmdn7kzgnm1jidrjhcfn4yqiwy231prj-tinymce-api-key', // Replace with your TinyMCE API key
+    apiKey: process.env.NEXT_PUBLIC_TINYMCE_API_KEY,
   }
 };
 

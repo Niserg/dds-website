@@ -1,3 +1,19 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   output: 'export',
+//   images: {
+//     unoptimized: true,
+//   },
+//   basePath: process.env.NODE_ENV === 'production' ? '/DDS' : '',
+//   assetPrefix: process.env.NODE_ENV === 'production' ? '/DDS/' : '',
+//   trailingSlash: true,
+// }
+
+// module.exports = nextConfig 
+
+// above for local hosting
+// below for github
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -9,4 +25,4 @@ const nextConfig = {
   trailingSlash: true,
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig

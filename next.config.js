@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/dds-website',
+  assetPrefix: '/dds-website/',
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/DDS' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/DDS/' : '',
   trailingSlash: true,
 }
 

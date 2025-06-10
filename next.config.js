@@ -23,14 +23,6 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/dds-website' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/dds-website/' : '',
   trailingSlash: true,
-  // Ensure consistent case sensitivity
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(css)$/,
-      use: ['style-loader', 'css-loader'],
-    });
-    return config;
-  },
 }
 
 module.exports = nextConfig

@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // This enables static HTML export
+  output: 'export',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  basePath: '/dds-website',
-  assetPrefix: '/dds-website/',
-};
+  basePath: process.env.NODE_ENV === 'production' ? '/DDS' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/DDS/' : '',
+}
 
-module.exports = nextConfig; 
+module.exports = nextConfig 

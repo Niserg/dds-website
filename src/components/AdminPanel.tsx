@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-import type { Editor as TinyMCEEditor } from 'tinymce';
 
 interface Update {
   id: string;
@@ -18,7 +17,7 @@ export default function AdminPanel() {
     content: '',
   });
 
-  const handleEditorChange = (content: string, editor: TinyMCEEditor) => {
+  const handleEditorChange = (content: string) => {
     setNewUpdate(prev => ({
       ...prev,
       content

@@ -4,7 +4,7 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/dds-website' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/dds-website/' : '',
   images: {
-    unoptimized: False,
+    unoptimized: false,
   },
   trailingSlash: true,
 }
